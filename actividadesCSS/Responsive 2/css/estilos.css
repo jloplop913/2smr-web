@@ -1,0 +1,64 @@
+/* Estilos generales para visibilidad */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.flex-item, .grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #2980b9;
+    font-weight: bold;
+}
+
+/* --- EJERCICIO 1: FLEXBOX --- */
+.flex-container {
+    display: flex;
+    flex-direction: column; /* Móvil: uno debajo de otro */
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+/* Escritorio: Los elementos se ponen en fila y se reparten el espacio */
+@media (min-width: 768px) {
+    .flex-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .flex-item {
+        flex: 1; /* Todos crecen igual */
+        margin: 0 5px;
+    }
+}
+
+/* --- EJERCICIO 2: GRID --- */
+.grid-container {
+    display: grid;
+    gap: 10px;
+    /* Móvil: Una sola columna */
+    grid-template-areas: 
+        "header"
+        "content"
+        "sidebar"
+        "footer";
+}
+
+/* Escritorio: Diseño de 3 columnas y varias filas */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 200px 1fr; /* Sidebar fija y contenido flexible */
+        grid-template-areas: 
+            "header  header"
+            "sidebar content"
+            "footer  footer";
+    }
+}
+
+/* Asignación de áreas de Grid */
+.header { grid-area: header; background-color: #2c3e50; }
+.sidebar { grid-area: sidebar; background-color: #e67e22; }
+.content { grid-area: content; background-color: #27ae60; min-height: 200px; }
+.footer { grid-area: footer; background-color: #c0392b; }

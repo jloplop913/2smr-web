@@ -1,0 +1,37 @@
+/* Estilos generales para visibilidad */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.flex-item, .grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #2980b9;
+    font-weight: bold;
+}
+
+/* --- EJERCICIO 1: FLEXBOX --- */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.flex-item{
+    flex: 1;
+}
+
+
+
+/* --- EJERCICIO 2: GRID --- */
+.grid-container {
+
+}
+
+
+

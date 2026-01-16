@@ -32,3 +32,10 @@ body{
  .mi_tarjeta{
     text-align: center;
 }
+@media (max-width: 768px){
+    .grid_container{
+        grid-template-columns: repeat(2, 1fr);
+        background-color: blueviolet;
+    }
+
+}

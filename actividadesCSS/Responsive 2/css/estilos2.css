@@ -1,0 +1,92 @@
+/* Estilos generales para visibilidad */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.flex-item, .grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #2980b9;
+    font-weight: bold;
+}
+
+/* --- EJERCICIO 1: FLEXBOX --- */
+.flex-container {
+    display: flex;
+    flex-direction: row;  /*escritorio los elementos se ponen en fila*/
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.flex-item {
+        flex: 1; /* Todos crecen igual */
+        margin: 0 5px;
+    }
+
+
+.aside-contenido
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:10px;
+}
+.aside-item
+{
+    background-color: red;
+    color: blue;
+    border: 1px solid black;
+    padding: 10px;
+}
+/* Movil: Los elementos se ponen en columna y se reparten el espacio */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;        
+    }
+ 
+ }
+
+/* --- EJERCICIO 2: GRID --- */
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 200px 1fr; /* Sidebar fija y contenido flexible */
+    grid-template-areas: 
+        "header  header"
+        "sidebar content"
+        "footer  footer";
+
+}
+
+
+@media (max-width: 768px) {
+    .grid-container {
+    grid-template-columns: 1fr;
+    /* Móvil: Una sola columna */
+    grid-template-areas: 
+        "header"
+        "content"
+        "sidebar"
+        "footer";
+    }
+}
+
+/* Asignación de áreas de Grid */
+.header { grid-area: header; background-color: #2c3e50; }
+.sidebar { grid-area: sidebar; background-color: #e67e22; }
+.content { grid-area: content; background-color: #27ae60; min-height: 200px;
+ display: grid; 
+ grid-template-columns: 1fr 1fr; }
+ .tarjeta{
+    border: 1px solid black;
+    border-radius: 10px;
+ }
+ img{
+    width: 30%;
+    height: auto;
+ }
+.footer { grid-area: footer; background-color: #c0392b; }
